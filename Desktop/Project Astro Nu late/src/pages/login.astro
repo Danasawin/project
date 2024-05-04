@@ -1,0 +1,71 @@
+---
+import  Layout  from '../layouts/clearlayout.astro';
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import '../components/LoginForm.css'
+---
+
+<Layout title="Food Recipes">
+    <div class="wrapper">
+        <form method="POST" id="loginForm">
+            <h1>Sign In</h1>
+            <div class="input-box" id='username'>
+                <input type="text" placeholder="Username" name='username' required/>
+                <FaUser className="icon"/>
+            </div>
+            <div class="input-box"id='password'>
+                <input type="password" placeholder="Password" name='password' required/>
+                <FaLock className="icon"/>
+            </div>
+
+            <div class='login-button'><input type="submit" value="Login" /></div>
+            <div class="register-link">
+                <p>Don't have an account?<a href="#">Register</a></p>
+            </div>
+        </form>
+            <div id="loginMessage"></div>
+    </div>
+</Layout>
+
+<script type="module">
+  const loginForm = document.getElementById('loginForm');
+  const loginMessage = document.getElementById('loginMessage');
+
+  loginForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(loginForm);
+    const username = formData.get('username');
+    const password = formData.get('password');
+
+    try {
+      if (typeof window === 'undefined') {
+        throw new Error('Window object not available');
+      }
+
+      const response = await fetch('http://localhost:8081/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to login');
+      }
+
+      const { access_token, refresh_token } = await response.json();
+
+      // Store tokens securely in localStorage
+      localStorage.setItem('accessToken', access_token);
+      localStorage.setItem('refreshToken', refresh_token);
+
+      // Redirect to profile page or dashboard upon successful login
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Error:', error);
+      loginMessage.textContent = 'Error during login. Please try again later.';
+    }
+  });
+</script>

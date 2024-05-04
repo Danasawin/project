@@ -1,0 +1,45 @@
+---
+import Navauth from "../util/getToken.jsx"
+import '../components/index.css'
+import '../components/food-recipe.css'
+import { Image } from 'astro:assets';
+
+
+const {frontmatter} = Astro.props;
+const{title,image,cuisine,time,difficulty,description,Ingredients} = frontmatter;
+---
+
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name = "description"  content="Test"> 
+	
+</head>
+<body>
+	<Navauth client:load/>
+    <div class="box-shadow">
+		<div class="container-food">
+			<Image class="food-img" src={image.src} alt={image.alt} width=900 height=600 format="avif" quality={80}></Image>
+		
+			 <h1 class="food-title">{title}</h1>
+		
+               <slot/>
+		
+		
+			   <section class="btn-section">
+				<button>Rate</button>
+				<button>Add Comment</button>
+				<button>Add to the List</button>
+ 
+					</section>
+				
+          
+		</div>
+		
+    </div>
+
+</body>
+<div class="footer"></div>
+</html>

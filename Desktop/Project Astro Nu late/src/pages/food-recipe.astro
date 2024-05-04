@@ -1,0 +1,24 @@
+--- 
+import Layout from "../layouts/Layout.astro"
+import Card from '../components/Card.astro'
+import '../components/food-recipe.css'
+
+const allfood = await Astro.glob("./all recipes/*.md")
+
+---
+
+<Layout title = "Food Recipes">
+      <div class='container'>
+          <h1  class= "text-explore" style="text-align: center; ">Explore Recipes</h1>
+          <div class="all-recipes">
+          <div class="grid-food-recipes">
+            {allfood.slice(0).map((post, index) => (
+              <Card key={index} frontmatter={post.frontmatter} url={post.url} />
+            ))}
+          </div>
+
+          </div>
+      </div>
+   
+   
+</Layout>

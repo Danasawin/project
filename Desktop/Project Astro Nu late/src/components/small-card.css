@@ -1,0 +1,29 @@
+.small-card {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 280px; /* Ensure the image does not exceed the width of the card */
+    height: 200px;
+    display:inline-block;
+    margin-bottom: 20px;
+   
+}
+
+  
+  .small-card .img-small-card {
+    width: 100%; /* Ensure the image does not exceed the width of the card */
+    height: 200px; 
+    object-fit: cover;/* Maintain aspect ratio */
+    
+  }
+ 
+  
+  .small-card:hover {
+    /* Scale up the card when hovered */
+    transform: scale(1.05);
+  }
+  .small-card h2 {
+    overflow: hidden; /* Prevent text overflow */
+    line-height: 1.2em; /* Set the line height to maintain readability */
+  }
+  

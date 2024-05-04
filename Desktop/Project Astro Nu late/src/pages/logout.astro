@@ -1,0 +1,19 @@
+--- 
+import Layout from "../layouts/Layout.astro"
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import Nav2 from "../components/Nav2.jsx"
+
+---
+
+<Layout title = "Food Recipes">
+     <script type="module">
+
+const { access_token, refresh_token } = await response.json();
+
+  // remove tokens securely in localStorage
+  localStorage.removeItem('accessToken', access_token);
+  localStorage.removeItem('refreshToken', refresh_token);
+
+      </script>
+</Layout>

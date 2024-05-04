@@ -1,0 +1,14 @@
+---
+import './small-card.css';
+
+const { frontmatter, url } = Astro.props;
+const { image, title } = frontmatter || {};
+---
+
+<a href={url} class="small-card">
+    {image && (
+        <img class='img-small-card' src={image.src} alt={image.alt} />
+      )}
+    <p class="text-small-card">{title}</p>
+  </div>
+</a>

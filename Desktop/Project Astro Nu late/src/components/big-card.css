@@ -1,0 +1,35 @@
+.big-card{
+ 
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 1200px; /* Set a fixed maximum width for the card */
+  height: 400px; /* Set a fixed height for the card */
+  display: inline-block;
+  width: 100%; /* Ensure the image does not exceed the width of the card */
+  height: auto; 
+  object-fit: cover;
+  
+}
+
+.img-big-card {
+  width: 120%; /* Ensure the image does not exceed the width of the card */
+  height: 55%; 
+  }
+.big-card {
+  /* Your existing card styles */
+  /* Add transition for smooth animation */
+  transition: transform 0.3s ease-in-out;
+}
+
+.big-card:hover {
+  /* Scale up the card when hovered */
+  transform: scale(1.05);
+}
+.big-card h2 {
+  overflow: hidden; /* Prevent text overflow */
+  line-height: 1.2em; /* Set the line height to maintain readability */
+}
+.text-big-card {
+  font-size: 32px;
+}

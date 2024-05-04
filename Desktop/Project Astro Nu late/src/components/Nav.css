@@ -1,0 +1,150 @@
+.navbar {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #16035e;
+  padding: 5px 7%;
+}
+
+ul {
+  flex: 1;
+  list-style: none;
+  text-align: center;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+ul li {
+  display: inline-block;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  color: #fff;
+  white-space: nowrap; /* Prevent the text from wrapping */
+
+}
+.dropdown li:nth-child(1), /* Select the third list item */
+.dropdown li:nth-child(2) { /* Select the fourth list item */
+  display: block; /* Force each of them to display in a separate line */
+}
+.navbar li:hover a {
+  color: red; /* Change the color to your desired color */
+}
+
+
+/*  for dropdown */
+.navbar ul li {
+  position: relative; /* Ensure positioning context for dropdown */
+}
+
+.navbar ul li .dropdown {
+  display: none; /* Hide dropdown by default */
+  position: absolute;
+  top: 100%; /* Position dropdown below the parent */
+  left: 0;
+  background-color: #fff; /* Background color for dropdown */
+  padding: 0.5rem 0;
+  z-index: 1; /* Ensure dropdown appears above other content */
+}
+
+.navbar ul li:hover .dropdown {
+  display: block; /* Display dropdown when parent li is hovered */
+}
+
+.navbar ul li .dropdown li {
+  padding: 0.5rem;
+}
+
+.navbar ul li .dropdown li a {
+  color: #333; /* Text color for dropdown items */
+  text-decoration: none; /* Remove underline */
+}
+
+.navbar ul li .dropdown li a:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+}
+
+.navbar .dropdown li:hover a {
+  color: red; /* Change the color to your desired color */
+}
+
+/* Reset default form styles */
+/* Reset default form styles */
+/* Reset default form styles */
+#loginForm {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 400px); /* Center vertically */
+}
+
+/* Style for username and password input fields */
+.username,
+.password {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px; /* Set maximum width for input fields */
+}
+
+.username input,
+.password input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style for login button */
+.login-button input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+.register {
+  margin-left: 10px;
+  transform: translate(-130%, 100%);
+  margin-top: 40px;
+}
+
+.register a {
+  color: #242424; /* Set link color */
+  font-weight: bold; /* Make the text bold */
+  transition: color 0.3s; /* Add transition effect */
+  
+}
+
+.register a:hover {
+  color: #0056b3; /* Change color on hover */
+}
+.login-link{
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+

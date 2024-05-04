@@ -1,0 +1,14 @@
+--- 
+import Layout from "../layouts/Layout.astro"
+import '../components/index.css'
+import {Testforauth} from "../util/testforauth.jsx"
+---
+
+<Layout title = "Food Recipes">
+      <Testforauth client:load/>
+      <div class='container'>
+        <h1>My List</h1>
+      </div>
+
+   
+</Layout>

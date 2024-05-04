@@ -1,0 +1,22 @@
+--- 
+import Layout from "../layouts/Layout.astro"
+import Card from '../components/Card.astro'
+import '../components/food-recipe.css'
+
+const allfood = await Astro.glob("./all recipes/*.md")
+const chickenRecipes = allfood.filter(post => post.frontmatter.type === 'chicken');
+
+---
+
+<Layout title = "Food Recipes">
+      <div class='container-food'>
+            <div class="grid-food-recipes">
+                  {chickenRecipes.map((post, index) => (
+                        <Card key={index} frontmatter={post.frontmatter} url={post.url} />
+                      ))}
+                </div>
+         
+      </div>
+ 
+   
+</Layout>

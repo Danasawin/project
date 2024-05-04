@@ -1,0 +1,128 @@
+--- 
+import Layout from "../layouts/Layout.astro"
+import Card from '../components/Card.astro'
+import BigCard from '../components/big-card.astro' 
+import CircleCard from "../components/circle-card.jsx"
+import SmallCard from '../components/small-card.astro'
+import '../components/index.css'
+import icon from './src/assets/search-w.png'
+import dessert from './src/assets/dessert.jpg'
+import drink from './src/assets/drink.jpg'
+import seafood from './src/assets/seafood.jpg'
+import meat from './src/assets/bulgogi.jpg'
+
+
+const allfood = await Astro.glob("./all recipes/*.{md,mdx}")
+const posts = allfood.filter((post) => !post.frontmatter.draft && post.frontmatter.slug);
+
+const randomIndices = Array.from({ length: 4 }, () => Math.floor(Math.random() * allfood.length));
+const randomRecipes = randomIndices.map(index => allfood[index]);
+const meatlessRecipes = allfood.filter(post => post.frontmatter.type === 'meatless');
+const randomIndicesmeatless = Array.from({ length: 4 }, () => Math.floor(Math.random() * meatlessRecipes.length));
+
+const randommeatlessRecipe = randomIndicesmeatless.map(index => meatlessRecipes[index]);
+
+let data;
+export async function load() {
+      const response = await fetch("http://localhost:8081/");
+      data = await response.json();
+      if (!data) {
+            console.error("Error fetching data during build");
+      }
+      return {};
+}
+
+
+
+---
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<Layout title = "Food Recipes">
+      <div class='container'>
+         
+            <div class="pic"> 
+                  <div class='search-box'>
+                        <input type="text" placeholder='Search'/>
+                  <div class="text-overlay">
+                        <h4>Food Recipes From Around The World!</h4>
+                  </div>
+                  <img class="icon" src={icon.src} alt="">
+                  </div>
+            </div>
+          
+      
+      <div class="Suggest">
+            <h1 class = "text-suggest">Recommend</h1>
+
+            <div class="grid">
+                  {randomRecipes.map((post, index) => (
+                        <Card key={index} frontmatter={post.frontmatter} url={post.url} />
+                      ))}
+
+
+                  
+            </div>
+      </div>
+
+      <div class="big-container">
+            <div class="seasonal-recipe">
+                  <h1 class="text-seasonal" >Holiday & Seasonal Recipes</h1>
+                  <div class="grid-vertical">
+                        <div class="left-column">
+                          
+
+
+                        </div>
+                        <div class="right-column">
+                        </div>
+                    </div>
+            </div>
+      </div>
+
+      <div class="vegetarian">
+            <h1 class = "text-vegetarian" style="text-align: center;">Meatless Recipes</h1>
+            <div class="grid">
+                  {randommeatlessRecipe.map((post, index) => (
+                        <Card key={index} frontmatter={post.frontmatter} url={post.url} />
+                      ))}
+            </div>
+      </div>
+
+      <div class="big-container">
+            <div class="seasonal-recipe">
+                  <h1 class="text-drink" >Special Drink & Dessert Recipes</h1>
+                  
+                  <div class="grid-vertical">
+                        <div class="left-column-big">
+                        
+                          
+
+                        </div>
+                        <div class="right-column-small">
+                          
+                        </div>
+                    </div>
+            </div>
+      </div>
+
+      <div class="explore-more">
+            <h1 class="explore-more-text" style="text-align: center;">EXPLORE MORE</h1>
+                  <div class="explore-card">
+                       <CircleCard title="Dessert" img={dessert} href='/dessert-recipe'></CircleCard>
+                       <CircleCard title="Drinks" img={drink} href='/drink-recipe'></CircleCard>
+                       <CircleCard title="Meat" img={meat} href='/meat-recipe'></CircleCard>
+
+                       <CircleCard title="Seafood" img={seafood} href='/seafood-recipe'></CircleCard>
+
+
+                  </div>
+                        
+      
+                     
+
+                 
+            </div>
+     
+</div>
+</div>
+
+</Layout>

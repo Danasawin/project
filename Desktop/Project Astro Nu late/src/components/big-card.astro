@@ -1,0 +1,15 @@
+---
+import './big-card.css';
+
+const { frontmatter, url } = Astro.props;
+const { image, title } = frontmatter || {};
+---
+
+<a class="big-card" href={url}>
+    
+      {image && (
+        <img class='img-big-card' src={image.src} alt={image.alt} />
+      )}
+      <p class="text-big-card">{title}</p>
+   
+  </a>

@@ -1,0 +1,27 @@
+.circle-card {
+    text-align: center;
+    display: inline-block;
+ 
+ 
+  }
+  
+  .img-circle-card {
+    border-radius: 50%;
+    width: 250px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    object-fit: cover; /* Ensure the image fills the circle */
+    margin-bottom: 10px; /* Spacing between image and text */
+   
+  }
+  
+  .text-circle-card {
+    font-size: 24px; /* Adjust font size as needed */
+
+  }
+  .circle-card:hover {
+    /* Scale up the card when hovered */
+    transform: scale(1.05);
+  }
+  .achor-circle-card{
+    text-decoration: none;
+  }

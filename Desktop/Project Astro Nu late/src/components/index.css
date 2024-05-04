@@ -1,0 +1,271 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+/* container */
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #e6f7ff;
+    
+    
+}
+
+.pic {
+    position: relative;
+    width: 100%;
+    height: 800px; /* Adjust the height of the picture */
+    background-image: url('../src/assets/bigpic.jpg');
+    background-size:cover; /* Change to contain to fit the picture within the container */
+    background-position: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+  }
+  
+  
+  .search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    background: rgba(36, 36, 36, 0.8); /* Semi-transparent black background */
+    padding: 10px 20px;
+    border-radius: 50px;
+  }
+  
+  .search-box input {
+    padding: 6px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 20px;
+    max-width: 400px;
+  }
+  
+  .search-box ::placeholder {
+    color: #fff;
+  }
+  .text-overlay {
+    position: absolute;
+    top: -250%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+  
+  .text-overlay h4 {
+    display: inline-block; /* Ensure the h4 element stays on the same line */
+    font-size: 64px; /* Adjust the font size */
+    margin: 0; /* Remove any default margin */
+    white-space: nowrap; /* Prevent the text from wrapping */
+  }
+
+  
+  h1 {
+    font-size: 52px;
+    font-family:'Times New Roman', Times, serif;
+    color: #0a0a0a;
+  }
+  .icon {
+    width: 24px; /* Adjust the width to make the icon smaller */
+    height: auto; /* Maintain aspect ratio */
+   
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Display 6 columns per row on larger screens */
+    grid-gap: 20px;
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    transform: translate(0%,0%);
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+
+
+
+  .text-suggest {
+    background-color: rgb(238, 139, 10);
+    width: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0 auto; /* Center horizontally within its parent container */
+  }
+
+  
+.card {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Background color for the cuisine text */
+  color: #fff; /* Text color for the cuisine text */
+  padding: 8px; /* Adjust padding as needed */
+  border-top-left-radius: 5px; /* Adjust border radius for rounded corners */
+}
+
+.cuisine {
+
+  font-size: 20px;
+  font-weight: bold; /* Make the text bold */
+  position: absolute;
+  bottom: 10px; /* Adjust vertical positioning */
+  right: 5px;
+  color: #242424;
+}
+.time-take {
+  font-size: 14px;
+  font-weight: bold; /* Make the text bold */
+  position: absolute;
+  color: #242424;
+  bottom: 10px; /* Adjust vertical positioning */
+  right: 80px; /* Move .time-take to the left */
+}
+.time-logo {
+  width: 20px;
+  position: absolute;
+  bottom: 10px; /* Adjust vertical positioning */
+  right: calc(100px + 50px + -10px); /* Move .cuisine-logo to the left of .cuisine */
+}
+.difficulty {
+  width: 80px;
+  display: flex;
+  position: absolute;
+  bottom: 13px; /* Adjust the distance from the bottom */
+  left: 10px; /* Adjust the distance from the left */
+}
+.big-container {
+  width: 100vw;
+  min-height: 80vh;
+  background-color: #fff;
+  
+}
+.text-seasonal {
+  background-color: rgb(235, 19, 206);
+  width: 650px;
+  height: 80px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 auto; /* Center horizontally within its parent container */
+  white-space: nowrap;
+  margin-top: 20px;
+}
+.text-drink{
+  background-color: rgb(235, 19, 206);
+  width: 750px;
+  height: 80px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 auto; /* Center horizontally within its parent container */
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.footer {
+  background-color: #333; /* Background color */
+  color: #fff; /* Text color */
+  padding: 100px; /* Padding around content */
+  text-align: center; /* Center align text */
+  width: 100vw;
+}
+.explore-more-text {
+  margin-top: 20px;
+  text-align: center;
+}
+.explore-more {
+  margin-top: 20px;
+  gap: 20px;
+  display: block;
+
+}
+.explore-card {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap as needed */
+  flex-wrap: wrap; /* Allow cards to wrap to next row */
+  margin: 0 auto; /* Center the cards horizontally */
+}
+
+.explore-card > * {
+  margin: 60px; /* Add margin around each card */
+}
+
+.text-vegetarian{
+  background-color: rgb(235, 19, 206);
+    width: 400px;
+    height: 80px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0 auto;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+.seasonal-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-vertical {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-column
+ {
+  width: 45%; /* Adjust as needed */
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.right-column {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  margin-right: 300px;
+ 
+}
+.left-column-big{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  margin-right: 300px;
+  transform: translate(30%,10%);
+}
+.right-column-small{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+
+
+  
+

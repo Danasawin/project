@@ -1,0 +1,15 @@
+---
+import '../components/circle-card.css';
+
+const { frontmatter, url } = Astro.props;
+const { image, text } = frontmatter || {};
+---
+
+<a href={url}>
+    <div class="circle-card">
+        {image && (
+            <img class='img-circle-card' src={image.src} alt={image.alt}   />
+          )}
+        <a href="#"><p class="text-circle-card">{text}</p></a>
+      </div>
+  </a>

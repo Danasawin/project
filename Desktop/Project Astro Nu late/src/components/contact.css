@@ -1,0 +1,31 @@
+.contact_card{
+ padding-left: 250px;
+ 
+ padding-top: 100px;
+ display:inline-block;
+
+}
+
+
+.contact_name {
+    width: 280px;
+    height: 60px;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    white-space: nowrap; /* Prevent the text from wrapping */
+
+}
+.contact_img{
+   
+    text-align: center;
+    border-radius: 50%;
+    width: 250px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    object-fit: cover; /* Ensure the image fills the circle */
+    margin-left: 10px;
+    
+   
+}
